@@ -34,7 +34,7 @@ output.textContent=url;
 fetch(url).then(res=> res.text())
 .then(data =>{
 console.log(data);
-})
+});
 </script>
     </head>
     <body>
@@ -60,7 +60,7 @@ console.log(data);
         <div class="row"> <a href="#" onclick="myFunction('noodles')">NOODLES</a> </div>
         <div class="row"> <a href="#" onclick="myFunction('snacks')">SNACKS</a> </div>
         <div class="row"> <a href="#" onclick="myFunction('salad')">SALAD, RAITHAS, WATER & SOFTDRIKS</a> </div -->
-         <div>
+        <div class="row output" id="output">
 
           </div>      
         <div class="row" id="nonVegStar">
