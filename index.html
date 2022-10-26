@@ -28,7 +28,7 @@ getArray().done(function(json) {
 const outputGoogle = document.getElementById('outputGoogle');
 const url="https://docs.google.com/spreadsheets/d/1POC0XmIdekVLAmCaI-ibx75IxKuqYMQjrHXEZdj3dfQ/gviz/tq?"; 
 //const endpoint='';
-outputGoogle.textContent=url;
+//outputGoogle.textContent=url;
 fetch(url).then(res=> res.text())
 .then(data =>{
         const temp =data.substr(47).slice(0, -2);
