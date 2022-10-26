@@ -11,22 +11,20 @@
 <script>
 
  
-function getArray(){
+/*function getArray(){
     return $.getJSON('data.json');
 }
 
 getArray().done(function(json) {
-    // now you can use json
+     
     console.log(json);
     var questions = [];
     $.each(json, function(key, val) {
         questions[key] = { Category: val.Category };
     });
     console.log(questions);
-});
-
-//"https://docs.google.com/spreadsheets/d/1POC0XmIdekVLAmCaI-ibx75IxKuqYMQjrHXEZdj3dfQ/gviz/q?";
-//https://docs.google.com/spreadsheets/d/1POC0XmIdekVLAmCaI-ibx75IxKuqYMQjrHXEZdj3dfQ/edit?usp=sharing
+});*/
+ 
 const output = document.querySelector('.outputGoogle');
 const url="https://docs.google.com/spreadsheets/d/1POC0XmIdekVLAmCaI-ibx75IxKuqYMQjrHXEZdj3dfQ/gviz/tq?"; 
 //const endpoint='';
@@ -34,10 +32,10 @@ output.textContent=url;
 fetch(url).then(res=> res.text())
 .then(data =>{
         const temp =data.substr(47).slice(0, -2);
-//console.log(temp);
-const jsonData=JSON.parse(temp);
-console.log(jsonData);
-});
+                //console.log(temp);
+                const jsonData=JSON.parse(temp);
+                console.log(jsonData);
+                });
 </script>
     </head>
     <body>
