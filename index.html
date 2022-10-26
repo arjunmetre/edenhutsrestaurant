@@ -34,7 +34,12 @@ fetch(url).then(res=> res.text())
         const temp =data.substr(47).slice(0, -2);
                 //console.log(temp);
                 const jsonData=JSON.parse(temp);
-                console.log(jsonData);
+                const rows=jsonData.table.rows;
+                const cols=jsonData.table.cols;
+                rows.forEach(row => {
+                        console.log(row);
+                });
+                
                 });
 </script>
     </head>
