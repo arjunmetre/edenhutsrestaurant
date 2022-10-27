@@ -39,7 +39,7 @@ fetch(url).then(res=> res.text())
                 const jsonData=JSON.parse(temp);
                 const rows=jsonData.table.rows;
                 const cols=jsonData.table.cols;
-                rows.forEach(element => root.insertAdjacentHTML('beforebegin', `<tr><td>${element.firstName}</td><td>${element.lastName}</td></tr>`));
+                rows.forEach(element => root.insertAdjacentHTML('beforebegin', '<tr><td>${element.firstName}</td><td>${element.lastName}</td></tr>'));
                 rows.forEach(row => {
                         //outputGoogle.text=row.text;
                         console.log(row);
