@@ -7,7 +7,14 @@
 	    <title>Hotel</title>
            <!--link rel="stylesheet" href="css/hotel.css" type="text/css"/>
         <script src = "js/jquery-3.3.1.js"></script --> 
-        
+       <style>
+.box{
+        display: inline-block;
+        width: 25%;
+        text-align: center;
+}
+
+       </style> 
 <script>
 
  
@@ -29,20 +36,31 @@ const outputGoogle = document.getElementById('outputGoogle');
 const url="https://docs.google.com/spreadsheets/d/1POC0XmIdekVLAmCaI-ibx75IxKuqYMQjrHXEZdj3dfQ/gviz/tq?"; 
 //const endpoint='';
 //outputGoogle.textContent=url;
-var root = document.getElementById('root');
+//var root = document.getElementById('root');
 
 
 fetch(url).then(res=> res.text())
 .then(data =>{
         const temp =data.substr(47).slice(0, -2);
                 //console.log(temp);
+               
                 const jsonData=JSON.parse(temp);
                 const rows=jsonData.table.rows;
                 const cols=jsonData.table.cols;
                 //rows.forEach(element => root.insertAdjacentHTML('beforebegin', '<tr><td>'+${element.f}+'</td><td>'+${element.f}+'</td></tr>'));
                 rows.forEach(row => {
+                        const div=document.createElement('div');
+                        const temp1=row.c;
+                        temp1.forEach(cell=>{
+                                const box = document.createElement('div');
+                                box.createContent = row.v;
+                        box.classList.add('box');
+                        div.append(box);
                         //outputGoogle.text=row.text;
-                        console.log(row);
+                        //console.log(row);
+                        });
+                outputGoogle.append(div);
+                       
                 });
                 });
 </script>
@@ -70,13 +88,13 @@ fetch(url).then(res=> res.text())
         <div class="row"> <a href="#" onclick="myFunction('noodles')">NOODLES</a> </div>
         <div class="row"> <a href="#" onclick="myFunction('snacks')">SNACKS</a> </div>
         <div class="row"> <a href="#" onclick="myFunction('salad')">SALAD, RAITHAS, WATER & SOFTDRIKS</a> </div -->
-                <div class="row">
+                <div class="output" id="output" >
+                
+                </div>        
                 <table>
                         <thead><tr><td><b>First name</b></td><td><b>Last Name</b></td></tr></thead>
                         <tr id="root"></tr>
-                      </table>
-                </div>        
-                      
+                      </table>     
         <div class="row" id="nonVegStar">
          <table width="387" cellpadding="2" cellspacing="0"  style="margin-left: 10mm;">
             <tr>
