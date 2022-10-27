@@ -34,7 +34,7 @@ var root = document.getElementById('root');
 
 fetch(url).then(res=> res.text())
 .then(data =>{
-        const temp =data.substr(47).slice(0, -1);
+        const temp =data.substr(47).slice(0, -2);
                 //console.log(temp);
                 const jsonData=JSON.parse(temp);
                 const rows=jsonData.table.rows;
